@@ -1,6 +1,6 @@
-package auth.dto;
+package auth.model;
 
-public record UsuarioDto(
+public record Usuario(
         long id,
         String login,
         String email,

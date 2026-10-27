@@ -42,6 +42,11 @@
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-community-dialects</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
         <!-- Só o BCryptPasswordEncoder, sem o resto do Spring Security -->
         <dependency>
             <groupId>org.springframework.security</groupId>
