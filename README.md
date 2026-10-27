@@ -21,9 +21,20 @@ Cada item de informação do documento identifica seu autor e seu revisor. Cada 
 | Camada         | Tecnologia                                                       |
 | -------------- | ---------------------------------------------------------------- |
 | Front-end      | HTML + TypeScript (compilado com `tsc`, requisições com `fetch`) |
-| Back-end       | TypeScript no Node.js, só com o módulo nativo `node:http`        |
-| Hash de senha  | `scrypt` do módulo nativo `node:crypto`                          |
-| Banco de dados | PostgreSQL                                                       |
+| Back-end       | Java 21 com Spring Boot                                          |
+| Hash de senha  | BCrypt (`spring-security-crypto`)                                |
+| Banco de dados | SQLite                                                           |
+
+## Estrutura
+
+O código é só um esqueleto, já que a APS pede o projeto e não a implementação.
+
+```
+backend/   API em Java com Spring Boot e SQLite (projeto Maven)
+docs/      definição da APS e artefatos do documento final
+```
+
+Para compilar o back-end: `mvn package` dentro de `backend/`.
 
 ## Documentação
 

@@ -1,2 +1,10 @@
 # Backups automáticos do draw.io (e quaisquer outros .bkp)
 *.bkp
+
+# Java / Maven
+target/
+
+# Banco SQLite local
+*.db
+
+.env
