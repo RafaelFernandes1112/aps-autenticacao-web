@@ -27,12 +27,12 @@ Cada item de informação do documento identifica seu autor e seu revisor. Cada 
 
 ## Estrutura
 
-O código é só um esqueleto, já que a APS pede o projeto e não a implementação.
-
 ```
-backend/   API em Java com Spring Boot e SQLite (projeto Maven)
+backend/   API de autenticação em Java com Spring Boot e SQLite (projeto Maven)
 docs/      definição da APS e artefatos do documento final
 ```
+
+O back-end implementa o contrato da Seção 2 (`POST /api/login`). A execução, o fluxo e o modelo de dados estão em [`backend/README.md`](backend/README.md). O desenho detalhado para o documento da APS está em [`docs/arquitetura/2.2-desenho-detalhado.md`](docs/arquitetura/2.2-desenho-detalhado.md).
 
 Para compilar o back-end: `mvn package` dentro de `backend/`.
 
