@@ -1,0 +1,27 @@
+%% Figura 1 – Componentes do ambiente operacional da aplicação Web (item 1.1)
+flowchart TB
+  subgraph rede["Infraestrutura de rede"]
+    dns["Servidor DNS<br>(item 1.3)"]
+  end
+
+  subgraph cliente["Lado do cliente"]
+    direction LR
+    usuario["Usuário"] --> nav["Navegador<br>(item 1.2)"]
+  end
+
+  subgraph servidor["Lado do servidor"]
+    direction LR
+    subgraph proc["Processo Java da aplicação Spring Boot (Java 21)"]
+      direction LR
+      tomcat["Servidor web<br>Tomcat embutido<br>(item 1.5)"]
+      app["Servidor de aplicação<br>Spring Boot + Spring MVC<br>(item 1.6)"]
+      sqlite["SQLite<br>biblioteca embutida<br>(item 1.7)"]
+      tomcat <-- "3) chamada ao DispatcherServlet,<br>no mesmo processo" --> app
+      app <-- "4) SQL via JDBC,<br>no mesmo processo" --> sqlite
+    end
+    db[("Arquivo do banco<br>auth.db")]
+    proc <-- "5) leitura do<br>arquivo em disco" --> db
+  end
+
+  dns <-- "1) consulta DNS (UDP 53)<br>e endereço IP" --> nav
+  nav <-- "2) HTTPS (TLS), TCP 8443, até o Tomcat<br>(item 1.4)" --> proc

@@ -1,0 +1,23 @@
+%% Figura 2 – Sequência de processamento de uma requisição de autenticação (item 1.8)
+sequenceDiagram
+  autonumber
+  actor U as Usuário
+  participant N as Navegador
+  participant D as Servidor DNS
+  participant T as Servidor web<br>(Tomcat embutido)
+  participant A as Servidor de aplicação<br>(Spring Boot + Spring MVC)
+  participant S as SQLite (embutido)
+
+  U->>N: Informa login ou e-mail e senha<br>e clica em #quot;Entrar#quot;
+  N->>D: Consulta o nome de domínio da API
+  D-->>N: Endereço IP
+  N->>T: Conexão TCP e handshake TLS (porta 8443)
+  N->>T: POST /api/login com JSON (HTTPS)
+  T->>A: Requisição decifrada ao DispatcherServlet<br>(mesmo processo)
+  Note over A: Converte o JSON e valida os campos<br>(400 se a requisição for inválida)
+  A->>S: Consulta parametrizada pelo login ou e-mail
+  S-->>A: Registro do usuário ou resultado vazio
+  Note over A: Verifica a senha com BCrypt e decide
+  A-->>T: 200 com id e nome, ou 401 com a mensagem de erro
+  T-->>N: Resposta cifrada (HTTPS)
+  N-->>U: Continua o fluxo autenticado<br>ou exibe a mensagem de erro
