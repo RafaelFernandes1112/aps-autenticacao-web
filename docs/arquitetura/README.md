@@ -1,14 +1,15 @@
 # Seção 2.1 – Projeto da arquitetura
 
-Rascunhos dos itens 2.1.1 a 2.1.5 (autor: Caique Duarte). Os diagramas usam o modelo C4 e ficam em `diagramas/`, no formato do draw.io.
+Rascunhos dos itens 2.1.1 a 2.1.6 (autor: Caique Duarte). Os diagramas usam o modelo C4 e ficam em `diagramas/`, no formato do draw.io.
 
-| Item                                | Texto                                                        | Figura                                                      |
-| ----------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------- |
-| 2.1.1 Requisitos                    | [2.1.1-requisitos.md](2.1.1-requisitos.md)                   | Figura 3 – [Contexto](diagramas/c4-1-contexto.drawio)       |
-| 2.1.2 Estilo arquitetural e camadas | [2.1.2-estilo-arquitetural.md](2.1.2-estilo-arquitetural.md) | Figura 4 – [Contêineres](diagramas/c4-2-conteineres.drawio) |
-| 2.1.3 Componentes                   | [2.1.3-componentes.md](2.1.3-componentes.md)                 | Figura 5 – [Componentes](diagramas/c4-3-componentes.drawio) |
-| 2.1.4 Implantação                   | [2.1.4-implantacao.md](2.1.4-implantacao.md)                 | Figura 6 – [Implantação](diagramas/c4-4-implantacao.drawio) |
-| 2.1.5 Contrato da API               | [2.1.5-contrato-api.md](2.1.5-contrato-api.md)               | Tabela 2                                                    |
+| Item                                  | Texto                                                        | Figura                                                      |
+| ------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------- |
+| 2.1.1 Requisitos                      | [2.1.1-requisitos.md](2.1.1-requisitos.md)                   | Figura 3 – [Contexto](diagramas/c4-1-contexto.drawio)       |
+| 2.1.2 Estilo arquitetural e camadas   | [2.1.2-estilo-arquitetural.md](2.1.2-estilo-arquitetural.md) | Figura 4 – [Contêineres](diagramas/c4-2-conteineres.drawio) |
+| 2.1.3 Componentes                     | [2.1.3-componentes.md](2.1.3-componentes.md)                 | Figura 5 – [Componentes](diagramas/c4-3-componentes.drawio) |
+| 2.1.4 Implantação                     | [2.1.4-implantacao.md](2.1.4-implantacao.md)                 | Figura 6 – [Implantação](diagramas/c4-4-implantacao.drawio) |
+| 2.1.5 Contrato da API                 | [2.1.5-contrato-api.md](2.1.5-contrato-api.md)               | Tabela 2                                                    |
+| 2.1.6 Decisões de projeto e segurança | [2.1.6-decisoes-seguranca.md](2.1.6-decisoes-seguranca.md)   |                                                             |
 
 Como o 2.1.1 ganhou uma figura, a numeração das figuras do modelo sobe uma posição a partir do 2.1.2.
 
