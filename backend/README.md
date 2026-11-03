@@ -23,6 +23,10 @@ mvn spring-boot:run "-Dspring-boot.run.profiles=dev"
 
 No IntelliJ, crie a configuração Maven com o comando `spring-boot:run -Dspring-boot.run.profiles=dev` e coloque `KEYSTORE_PASSWORD=senha-do-keystore` em *Environment variables*.
 
+## Tela de login
+
+Com a API no ar, abra **https://localhost:8443/** no navegador (aceite o aviso do certificado autoassinado). A tela de login é HTML, CSS e JS puros em `src/main/resources/static/` e é servida pela própria API, então não precisa de outro servidor.
+
 ## Contrato
 
 `POST /api/login`

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Tela de login -->
+  <main class="card" id="tela-login">
+    <h1>Entrar</h1>
+    <p class="sub">Informe seu login ou e-mail e a senha.</p>
+
+    <form id="form-login" novalidate>
+      <label for="identificador">Login ou e-mail</label>
+      <input id="identificador" name="identificador" type="text" autocomplete="username" required>
+
+      <label for="senha">Senha</label>
+      <div class="campo-senha">
+        <input id="senha" name="senha" type="password" autocomplete="current-password" required>
+        <button id="btn-ver" type="button" class="link">Mostrar</button>
+      </div>
+
+      <button id="btn" type="submit">Entrar</button>
+    </form>
+
+    <p id="mensagem" role="status" hidden></p>
+  </main>
+
+  <!-- Tela exibida depois de entrar -->
+  <main class="card" id="tela-ok" hidden>
+    <h1>Você entrou!</h1>
+    <p id="boas-vindas" class="ok-texto"></p>
+    <button id="btn-sair" type="button">Sair</button>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
