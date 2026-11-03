@@ -2,33 +2,26 @@
 
 Back-end da APS de Domínios de Software. Recebe login ou e-mail e senha, confere o usuário no SQLite e a senha com BCrypt, e devolve a identificação do usuário. Faz somente a verificação de credenciais.
 
-O desenho correspondente no documento da APS está em [`docs/arquitetura/2.2-desenho-detalhado.md`](../docs/arquitetura/2.2-desenho-detalhado.md). O contrato está no item 2.1.5.
+O desenho correspondente no documento da APS está em [`docs/componentes/`](../docs/componentes/). O contrato está no item 2.1.5.
 
 ## Executar
 
-É preciso Java 21, Maven e a senha do keystore na variável `KEYSTORE_PASSWORD`. O arquivo `src/main/resources/keystore.p12` é o certificado usado pelo HTTPS. A API sobe na porta **8443**.
+É preciso Java 21 e Maven (ou o Maven do IntelliJ). A API sobe em **https://localhost:8443**.
 
-No PowerShell, a partir desta pasta:
+**1. Gerar o keystore** (uma vez só). O arquivo `src/main/resources/keystore.p12` é o certificado do HTTPS e não é versionado. A senha do `-storepass` é a mesma de `KEYSTORE_PASSWORD`. A partir desta pasta:
 
 ```powershell
-$env:KEYSTORE_PASSWORD = "senha-do-keystore"
-mvn spring-boot:run
+keytool -genkeypair -alias auth -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore src/main/resources/keystore.p12 -validity 3650 -dname "CN=localhost" -storepass senha-do-keystore
 ```
 
-O perfil `dev` insere um usuário de exemplo se ele ainda não existir (`login` `maria`, e-mail `maria@exemplo.com`, senha `senha123`):
+**2. Subir a API.** O perfil `dev` insere um usuário de exemplo se ele ainda não existir (`login` `maria`, e-mail `maria@exemplo.com`, senha `senha123`):
 
 ```powershell
 $env:KEYSTORE_PASSWORD = "senha-do-keystore"
 mvn spring-boot:run "-Dspring-boot.run.profiles=dev"
 ```
 
-Para gerar outro keystore de desenvolvimento:
-
-```powershell
-keytool -genkeypair -alias auth -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore src/main/resources/keystore.p12 -validity 3650
-```
-
-A senha informada ao `keytool` é o valor de `KEYSTORE_PASSWORD`.
+No IntelliJ, crie a configuração Maven com o comando `spring-boot:run -Dspring-boot.run.profiles=dev` e coloque `KEYSTORE_PASSWORD=senha-do-keystore` em *Environment variables*.
 
 ## Contrato
 

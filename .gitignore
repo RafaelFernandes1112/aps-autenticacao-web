@@ -8,5 +8,8 @@ target/
 *.db
 
 .env
+
+# Keystore do HTTPS (chave privada)
+*.p12
 .idea/
 .vscode/

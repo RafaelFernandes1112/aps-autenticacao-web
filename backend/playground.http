@@ -1,0 +1,4 @@
+POST https://localhost:8443/api/login
+Content-Type: application/json
+
+{ "identificador": "maria", "senha":"senha1234" }
